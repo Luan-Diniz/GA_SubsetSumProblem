@@ -4,7 +4,7 @@ import pygad, numpy
 function_inputs = list({103,209,123,342,567,198,415,876,145,320,255,689,334,134,562,435,778,156,901,324})
 desired_output = 3953
 
-# Função de fitness adaptada para o Subset Sum
+# Função de fitness adaptada para o Subset Sum Problem
 def fitness_func(ga_instance, solution, solution_idx):
     # Multiplica cada gene pela entrada correspondente para formar o subconjunto
     subset_sum = numpy.sum(numpy.array(function_inputs) * solution)
