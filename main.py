@@ -2,8 +2,8 @@ import pygad
 import numpy
 
 # Dados do problema
-function_inputs = list({15, 22, 14, 26, 32, 9, 16, 8, 27, 5, 18, 12, 7, 19, 3, 21})
-desired_output = 50
+function_inputs = list({103,209,123,342,567,198,415,876,145,320,255,689,334,134,562,435,778,156,901,324})
+desired_output = 3500
 
 # Função de fitness adaptada para o Subset Sum
 def fitness_func(ga_instance, solution, solution_idx):
@@ -16,6 +16,7 @@ def fitness_func(ga_instance, solution, solution_idx):
         fitness = 1_000_000
     else:
         fitness = 1.0 / (1.0 + abs(subset_sum - desired_output))
+
     return fitness
 
 # Parâmetros do algoritmo genético
@@ -55,6 +56,7 @@ ga_instance = pygad.GA(
 
 # Executa o algoritmo genético
 ga_instance.run()
+ga_instance.plot_fitness()
 
 # Imprime a melhor solução encontrada
 solution, solution_fitness, solution_idx = ga_instance.best_solution()
