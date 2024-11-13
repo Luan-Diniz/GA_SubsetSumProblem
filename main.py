@@ -20,7 +20,7 @@ def fitness_func(ga_instance, solution, solution_idx):
 
 # Parâmetros do algoritmo genético
 fitness_function = fitness_func
-num_generations = 100
+num_generations = 1000
 num_parents_mating = 4
 sol_per_pop = 10              # soluções por população
 num_genes = len(function_inputs)
@@ -30,7 +30,6 @@ init_range_low = 0
 init_range_high = 1
 
 parent_selection_type = "sss"
-keep_parents = 1
 crossover_type = "single_point"
 mutation_type = "random"
 mutation_percent_genes = 10
@@ -46,7 +45,6 @@ ga_instance = pygad.GA(
     init_range_high=init_range_high,
     gene_space=[0, 1],  # Restringe os valores dos genes a binários (0 e 1)
     parent_selection_type=parent_selection_type,
-    keep_parents=keep_parents,
     crossover_type=crossover_type,
     mutation_type=mutation_type,
     mutation_percent_genes=mutation_percent_genes,
